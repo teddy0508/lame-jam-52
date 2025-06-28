@@ -9,9 +9,13 @@ albedo_texture = ExtResource("2_noarx")
 [node name="Node3D" type="Node3D"]
 
 [node name="Environment" parent="." instance=ExtResource("1_a202f")]
-transform = Transform3D(10.5811, 0, 0, 0, 10.5811, 0, 0, 0, 10.5811, -85.6739, 105.33, 44.3035)
+transform = Transform3D(10.5811, 0, 0, 0, 10.5811, 0, 0, 0, 10.5811, -86.2769, 105.848, 44.6893)
 
 [node name="Cube" parent="Environment" index="0"]
+transform = Transform3D(-9.91361, 0, 0, 0, -0.0674975, 0, 0, 0, -9.93496, 1.38855, 0.814288, -0.183067)
 material_override = SubResource("StandardMaterial3D_a0tk4")
+
+[node name="Grid_002" parent="Environment" index="2"]
+gi_mode = 2
 
 [editable path="Environment"]
