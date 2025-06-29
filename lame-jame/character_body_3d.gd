@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 var moveSpeed := 7.0
 const mouseSensitivity := 0.001
-@onready var sfx_footsteps = $AudioStreamPlayer3D
+@onready var sfx_footsteps = $Head/AudioStreamPlayer3D
 
 const bobFreq = 1.5
 const bobAmp = 0.2

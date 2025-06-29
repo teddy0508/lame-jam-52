@@ -1817,6 +1817,12 @@ light_specular = 0.0
 distance_fade_enabled = true
 spot_range = 16.8518
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CharacterBody3D/Head"]
+transform = Transform3D(0.999701, 0.00591732, -0.0237553, -0.00705839, 0.99881, -0.0482422, 0.0234416, 0.0483953, 0.998553, 0.215803, -0.0047645, -0.0378356)
+stream = ExtResource("4_jka67")
+volume_db = 80.0
+parameters/looping = true
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 transform = Transform3D(0.232325, 5.37153e-10, 0, 5.83285e-11, 0.901541, -3.35596e-10, 3.72529e-09, 3.46428e-09, 0.154775, 0.109907, 0.541748, 0.319519)
 visible = false
@@ -1826,12 +1832,5 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(0.232322, 5.37433e-10, 0, 5.84115e-11, 0.90153, 1.30059e-10, 3.72529e-09, -2.61056e-10, 0.154773, 0.111086, 0.544403, 0.318108)
 shape = SubResource("ConvexPolygonShape3D_a0tk4")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.1088, 28.6467, -4.87971)
-stream = ExtResource("4_jka67")
-volume_db = 10.0
-max_distance = 4096.0
-parameters/looping = true
 
 [editable path="Environment"]
