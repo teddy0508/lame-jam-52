@@ -1,12 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://ld5f5e4moqrx"]
+[gd_scene load_steps=7 format=3 uid="uid://ld5f5e4moqrx"]
 
 [ext_resource type="PackedScene" uid="uid://cwe553i0dexa5" path="res://Environment.blend" id="1_a202f"]
 [ext_resource type="Texture2D" uid="uid://c5lxtetsembyr" path="res://Ground.png" id="2_noarx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.194145, 0.186395, 0.177395, 1)
+ground_horizon_color = Color(0.194145, 0.186395, 0.177395, 1)
+energy_multiplier = 0.8
+
+[sub_resource type="Sky" id="Sky_a0tk4"]
+sky_material = SubResource("ProceduralSkyMaterial_noarx")
+
+[sub_resource type="Environment" id="Environment_r3fl7"]
+background_mode = 2
+sky = SubResource("Sky_a0tk4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0tk4"]
 albedo_texture = ExtResource("2_noarx")
 
 [node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_r3fl7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.999903, -0.0139622, -6.10307e-10, 0, -4.37114e-08, 1, -0.0139622, 0.999903, 4.37071e-08, 0, 202.529, 0)
+light_color = Color(0.40378, 0.40378, 9.62615e-08, 1)
+shadow_enabled = true
 
 [node name="Environment" parent="." instance=ExtResource("1_a202f")]
 transform = Transform3D(10.5811, 0, 0, 0, 10.5811, 0, 0, 0, 10.5811, -86.2769, 105.848, 44.6893)
@@ -17,5 +38,8 @@ material_override = SubResource("StandardMaterial3D_a0tk4")
 
 [node name="Grid_002" parent="Environment" index="2"]
 gi_mode = 2
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.144599, -0.00705841, 0.989465, -0.0487558, 0.998811, -9.92544e-10, -0.988288, -0.0482421, -0.144771, 18.885, 124.098, 51.8188)
 
 [editable path="Environment"]
