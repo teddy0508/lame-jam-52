@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 var moveSpeed := 7.0
 const mouseSensitivity := 0.001
+@onready var sfx_footsteps = $AudioStreamPlayer3D
 
 const bobFreq = 1.5
 const bobAmp = 0.2
@@ -24,7 +25,7 @@ func _unhandled_input(event):
 	
 
 func _process(delta: float) -> void:
-	var input = Input.get_vector("move_forward", "move_backward", "move_right", "move_left",)
+	var input = Input.get_vector("move_forward", "move_backward", "move_right", "move_left")
 	var direction = (object.transform.basis * Vector3(input.x, 0, input.y)).normalized()
 	if direction:
 		velocity.x = direction.x * moveSpeed
@@ -32,6 +33,7 @@ func _process(delta: float) -> void:
 	else:
 		velocity.x = 0.0
 		velocity.z = 0.0
+		sfx_footsteps.play()
 		
 		
 	t_bob += delta * velocity.length()
