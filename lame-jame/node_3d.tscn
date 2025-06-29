@@ -618,6 +618,7 @@ environment = SubResource("Environment_r3fl7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.999903, -0.0139622, -6.10307e-10, 0, -4.37114e-08, 1, -0.0139622, 0.999903, 4.37071e-08, 0, 202.529, 0)
+visible = false
 light_color = Color(0.40378, 0.40378, 9.62615e-08, 1)
 shadow_enabled = true
 directional_shadow_split_1 = 0.0
@@ -1806,6 +1807,15 @@ transform = Transform3D(0.9997, -0.0070584, 0.0234416, 0.00591731, 0.998811, 0.0
 transform = Transform3D(-0.121367, 2.67755e-09, 0.992608, 7.45058e-09, 1, 6.0536e-09, -0.992608, 0, -0.121367, 0, 0, 0)
 rotation_edit_mode = 2
 fov = 90.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D/Head/Camera3D"]
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 16.0
+light_size = 1.0
+light_specular = 0.0
+distance_fade_enabled = true
+spot_range = 16.8518
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 transform = Transform3D(0.232325, 5.37153e-10, 0, 5.83285e-11, 0.901541, -3.35596e-10, 3.72529e-09, 3.46428e-09, 0.154775, 0.109907, 0.541748, 0.319519)
